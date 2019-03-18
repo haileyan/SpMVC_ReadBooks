@@ -41,7 +41,18 @@ $(function(){
 		
 	})
 	
-	
+	$("#join").click(function(){
+		$.ajax({
+			url:"<c:url value='/join'/>",
+			method:"GET",
+			success:function(result){ 
+				$("#body").html(result)
+			},
+			error:function(){
+				alert("nope;(")
+			}
+		})
+	})
 	
 })
 </script>
@@ -52,7 +63,7 @@ $(function(){
 		<ul>
 			<li><a href="javascript:void(0)" id="home"><b>Home</b></a></li>
 			<li><a href="javascript:void(0)" id="write"><b>도서록작성</b></a></li>
-			<li><a href="#" id="enroll"><b>회원가입</b></a></li>
+			<li><a href="javascript:void(0)" id="join"><b>회원가입</b></a></li>
 			<li><a href="#" id="login"><b>로그인</b></a></li>
 		</ul>
 	</nav>
